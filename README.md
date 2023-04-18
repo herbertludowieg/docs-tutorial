@@ -32,7 +32,11 @@ there are a set of files
   documentation. Can handle what extensions are included, `extensions`
   variable, and the HTML theme to use, `html_theme` variable.
 
-
+Have to remember to set the "Workflow permissions" to "Read and write
+permissions". This can be found in Settings -> Actions -> General ->
+Workflow permissions. What this will allow you to do is to push to a
+branch when building the documentation and pushing the HTML pages to the
+gh-pages branch in your repository.
 
 
 
