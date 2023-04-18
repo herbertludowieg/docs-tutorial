@@ -1,0 +1,34 @@
+name: Main
+
+on:
+  push:
+    branches:
+      [master, main]
+
+jobs:
+  publish-docs:
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    name: Publish Docs
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install Pandoc
+        run: sudo apt-get install -y pandoc
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade -r requirements.txt -e .
+      - name: Sphinx build
+        run: |
+          sphinx-build docs/source _build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/
+          force_orphan: true
+
