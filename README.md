@@ -20,8 +20,4 @@ First thing you want to do is go to the "Settings" tab in the repository
 
 Then you want to go into the "Pages" tab
 
-![image}(images/settings-sel-page.png)
-
-
-
-
+![image](images/settings-sel-page.png)
