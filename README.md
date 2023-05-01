@@ -1,42 +1,27 @@
-# Tips for creating a documentation page with sphinx
+# Tutorial on creating documentation to publish on GitHub Pages
 
-Sphinx is a neat little Python library that can convert many different
-types of text files into html pages, pdf files, etc. For this you will
-need to have the following installed in the python environment of
-choice:
+**Disclaimer**: this is based purely on the knowledge that I have gathered through the years. I am in no way an expert on how to do this. A lot of what you'll see here are things that I have personally done and should serve as a beginner guide.
 
-- sphinx
-- nbsphinx
+GitHub has a service for open source projects where you can host
+documentation pages for your code base called GitHub pages. Enabling this
+service allows the maintainers to automatically build the documentation pages in HTML or Markdown format. This is a step-by-step tutorial that will walk you through how to do this for three cases:
 
-To create the docs you can then run
+- Pure HTML
+- Pure Markdown
+- reStructured text converted into HTML
 
-```bash
-mkdir docs
-cd docs
-sphinx-quickstart
-```
+In the first case for pure HTML code it is very simple as there is not conversion that has to happen to publish to an HTML website (I use this on my personal portfolio website). This can give you the most control over how your website/documentation looks, but requires the greatest amount of work, obviously. Using pure Markdown is a very convenient option as it is simple to create pages, very simplistic, and easy to maintain. However, this can be very restrictive in terms of how the final product will look. Using reStructured text is similar to how you would write things in Markdown, but it is very simple to use third-party programs like [Sphinx](https://www.sphinx-doc.org/en/master/) to compile the files into HTML. Some third party programs, like Sphinx, can also go through your source code and, as long as the formatting is correct, they can automatically build the documentation for the source code (I use this a Python code that I have created).
 
-And work through the menu prompts it gives. We recommend that you *DO*
-separate the source and build directories (first prompt). It is not
-required to run it in a different directory, but it can be helpful for
-organization purposes. Especially when this is attached to a code base
-as it will create a `Makefile` for compiling everything.
+## Enabling GitHub pages on the repository
 
-After the program has run you should see two directories, `source` and
-`build`, a `Makefile` and a `make.bat` file. In the `source` directory
-there are a set of files
+First thing you want to do is go to the "Settings" tab in the repository
 
-- `index.rst`: Main index file that can serve as the homepage for the
-  website or documentation.
-- `conf.py`: Configuration script with directives on how to build the
-  documentation. Can handle what extensions are included, `extensions`
-  variable, and the HTML theme to use, `html_theme` variable.
+![image](images/main-page-sel-set.png)
 
-Have to remember to set the "Workflow permissions" to "Read and write
-permissions". This can be found in Settings -> Actions -> General ->
-Workflow permissions. What this will allow you to do is to push to a
-branch when building the documentation and pushing the HTML pages to the
-gh-pages branch in your repository.
+Then you want to go into the "Pages" tab
+
+![image}(images/settings-sel-page.png)
+
 
 
 
