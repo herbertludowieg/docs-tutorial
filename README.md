@@ -2,7 +2,8 @@
 
 **Disclaimer**: this is based purely on the knowledge that I have gathered through the years. I am in no way an expert on how to do this. A lot of what you'll see here are things that I have personally done and should serve as a beginner guide.
 
-## Table of contents
+* TOC
+{:toc}
 
 1. [Quick Introduction](#quick-introduction)
 
@@ -88,7 +89,7 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 ### Main branch root directory
 
-
+This is a small tutorial that is actually similar to how this entire tutorial is structured and the steps in the [Enabling GitHub pages](#enabling-github-pages) are identical. In this section I will be adding more information on how you can use themes to build your pages to make them look a bit nicer and visually engaging. You can find the themes that are supported [here](https://pages.github.com/themes/). For the purpose of this tutorial i have chosen the [Leap day theme](https://github.com/pages-themes/leap-day) from personal preference.
 
 ### Main branch docs directory
 
