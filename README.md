@@ -67,3 +67,23 @@ Once the orange dot turns into a solid green check as
 The page should have been deployed with the contents of the `README.md` file being displayed on the website that was created. Typically the web address will be `https://username.github.io/repo-name`, where `username` is your GitHub username and `repo-name` is the name of the repository. Here, there can be a small difference in what you may be doing. If this is your personal website such that `repo-name` is `username.github.io`, the web address is just `https://username.github.io`. You can find where the pages are hosted in the GitHub pages settings seen here
 
 ![image](images/settings-pages-deployed.png)
+
+## Different configurations
+
+### Table of contents
+
+1. [Main branch root directory](#main-branch-root-directory)
+
+2. [Main branch docs directory](#main-branch-docs-directory)
+
+3. [gh-pages branch root directory](#gh-pages-branch-root-directory)
+
+### Main branch root directory
+
+
+
+### Main branch docs directory
+
+
+
+### gh-pages branch root directory
