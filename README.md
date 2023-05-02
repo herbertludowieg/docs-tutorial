@@ -2,6 +2,7 @@
 
 **Disclaimer**: this is based purely on the knowledge that I have gathered through the years. I am in no way an expert on how to do this. A lot of what you'll see here are things that I have personally done and should serve as a beginner guide.
 
+## Table of contents
 * TOC
 {:toc}
 
@@ -65,15 +66,11 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 ![image](images/settings-pages-deployed.png)
 
+[Back to top](#table-of-contents)
+
 ## Different configurations
 
-### Table of contents
-
-1. [Main branch root directory](#main-branch-root-directory)
-
-2. [Main branch docs directory](#main-branch-docs-directory)
-
-3. [gh-pages branch root directory](#gh-pages-branch-root-directory)
+[back to top](#table-of-contents)
 
 ### Main branch root directory
 
@@ -82,5 +79,9 @@ This is a small tutorial that is actually similar to how this entire tutorial is
 ### Main branch docs directory
 
 
-
 ### gh-pages branch root directory
+
+## New section for testing
+
+[back to top](#table-of-contents)
+
