@@ -5,18 +5,6 @@
 * TOC
 {:toc}
 
-1. [Quick Introduction](#quick-introduction)
-
-2. [Enabling GitHub pages](#enabling-github-pages)
-
-3. [Different configurations](#different-configurations)
-   
-   1. [Main branch root directory](#main-branch-root-directory)
-   
-   2. [Main branch docs directory](#main-branch-docs-directory)
-   
-   3. [gh-pages branch root directory](#gh-pages-branch-root-directory)
-
 ## Quick introduction
 
 GitHub has a service for open source projects where you can host
