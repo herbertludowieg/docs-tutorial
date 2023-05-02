@@ -67,13 +67,8 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 ## Different configurations
 
-### Table of contents
-
-1. [Main branch root directory](#main-branch-root-directory)
-
-2. [Main branch docs directory](#main-branch-docs-directory)
-
-3. [gh-pages branch root directory](#gh-pages-branch-root-directory)
+* TOC
+{:toc}
 
 ### Main branch root directory
 
@@ -84,3 +79,5 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 
 ### gh-pages branch root directory
+
+## New section for testing
