@@ -1,10 +1,13 @@
 # Tutorial on creating documentation to publish on GitHub Pages
 
-**Disclaimer**: this is based purely on the knowledge that I have gathered through the years. I am in no way an expert on how to do this. A lot of what you'll see here are things that I have personally done and should serve as a beginner guide.
+##### Disclaimer
+
+This is based purely on the knowledge that I have gathered through the years. I am in no way an expert on how to do this. A lot of what you'll see here are things that I have personally done and should serve as a beginner guide.
 
 ## Table of contents
+
 * TOC
-{:toc}
+  {:toc}
 
 ## Quick introduction
 
@@ -18,7 +21,9 @@ service allows the maintainers to automatically build the documentation pages in
 
 In the first case for pure HTML code it is very simple as there is not conversion that has to happen to publish to an HTML website (I use this on my personal portfolio website). This can give you the most control over how your website/documentation looks, but requires the greatest amount of work, obviously. Using pure Markdown is a very convenient option as it is simple to create pages, very simplistic, and easy to maintain. However, this can be very restrictive in terms of how the final product will look. Using reStructured text is similar to how you would write things in Markdown, but it is very simple to use third-party programs like [Sphinx](https://www.sphinx-doc.org/en/master/) to compile the files into HTML. Some third party programs, like Sphinx, can also go through your source code and, as long as the formatting is correct, they can automatically build the documentation for the source code (I use this a Python code that I have created).
 
-**Note**: I am assuming that you are creating the documentation pages for a repository, not a personal website to be hosted with the web address `https://username.github.io`. If you are trying to create a personal website, you will need to create a repository with the name `username.github.io`, where `username` in both cases is your GitHub username. I will highlight where there may be some slight differences in the information provided here, but the only difference is the web address used for the website.
+##### Note:
+
+I am assuming that you are creating the documentation pages for a repository, not a personal website to be hosted with the web address `https://username.github.io`. If you are trying to create a personal website, you will need to create a repository with the name `username.github.io`, where `username` in both cases is your GitHub username. I will highlight where there may be some slight differences in the information provided here, but the only difference is the web address used for the website.
 
 ## Enabling GitHub pages
 
@@ -66,6 +71,39 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 ![image](images/settings-pages-deployed.png)
 
+When you go to the website, what you will find is that there is a link to the same page on the top of the webpage. To get rid of this create a new directory `_layouts` and in that directory copy paste the following contents into a file called `default.html`
+
+```html
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+
+      {{ content }}
+
+      {% if site.github.private != true and site.github.license %}
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. {% github_edit_link "Improve this page" %}.
+      </div>
+      {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
+```
+
+Once you push the new code and the `pages-build-deployment` action finishes the link should be removed from the top of the webpage.
+
 [Back to top](#table-of-contents)
 
 ## Different configurations
@@ -76,12 +114,22 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 This is a small tutorial that is actually similar to how this entire tutorial is structured and the steps in the [Enabling GitHub pages](#enabling-github-pages) are identical. In this section I will be adding more information on how you can use themes to build your pages to make them look a bit nicer and visually engaging. You can find the themes that are supported [here](https://pages.github.com/themes/). For the purpose of this tutorial i have chosen the [Leap day theme](https://github.com/pages-themes/leap-day) from personal preference.
 
-### Main branch docs directory
+The first step in this is to clone the repository from [here](https://github.com/pages-themes/leap-day) and copy the `_config.yml` file and the directories `_layouts` and `_sass` into your repository. Notice that the `default.html` file that we edited previously will be different as we are now including more things for styling from the `_sass` directory. At the time of writing this document this has only been done for the Leap dat theme. As soon as more and/or all of the themes are tested this will be updated.
 
+As soon as you push the edits the `pages-build-deployment` action will execute and as soon as that is done you should see a new webpage that looks like
+
+![images](images/leap-day-theme.png)
+
+Also matching the example given in the [Leap day theme web page](https://pages-themes.github.io/leap-day/).
+
+##### Note:
+
+This is currently displaying the contents in the `README.md` file. If you include a file `index.md` the `pages-build-deployment` action will automatically build the pages using that file instead. If this is your intention then you can go ahead and separate the two. The contents of the `README.md` file should still be the one displayed on the main page of the GitHub repository you are applying this to.
+
+### Main branch docs directory
 
 ### gh-pages branch root directory
 
 ## New section for testing
 
 [back to top](#table-of-contents)
-
