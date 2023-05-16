@@ -7,7 +7,7 @@ This is based purely on the knowledge that I have gathered through the years. I 
 ## Table of contents
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Quick introduction
 
