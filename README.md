@@ -73,7 +73,7 @@ The page should have been deployed with the contents of the `README.md` file bei
 
 When you go to the website, what you will find is that there is a link to the same page on the top of the webpage. To get rid of this create a new directory `_layouts` and in that directory copy paste the following contents into a file called `default.html`
 
-```html
+```
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
   <head>
